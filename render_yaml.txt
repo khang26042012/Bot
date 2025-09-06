@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: discord-gemini-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python discord_bot.py
+    plan: free
+    envVars:
+      - key: DISCORD_TOKEN
+        value: MTQxMzc4MjMxMDI2Mzg0OTAxMw.GzUbB2.KaBVXmLqPhvPW6J2mSkKeMGdD0G6KUQQFK9hPo
+      - key: GEMINI_KEY  
+        value: AIzaSyBAMcGOaB-Cl_XQY3yrUM3V5Y2NW-AusPU
+    autoDeploy: true
