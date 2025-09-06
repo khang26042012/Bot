@@ -3,7 +3,7 @@ services:
     name: discord-gemini-bot
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python discord_bot.py
+    startCommand: python discord_gemini_bot.py
     plan: free
     envVars:
       - key: DISCORD_TOKEN
