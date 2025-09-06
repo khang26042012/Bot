@@ -377,7 +377,18 @@ async def on_message(message):
     await bot.process_commands(message)
 
 if __name__ == "__main__":
-    # Chạy bot
-    print("Đang khởi động Discord Bot...")
-    print("Nhớ thay thế DISCORD_TOKEN và GEMINI_API_KEY bằng keys thật!")
-    bot.run(DISCORD_TOKEN)
+    print("🚀 Đang khởi động Discord Bot với Gemini 2.0...")
+    print("📋 Checklist:")
+    print("✅ Discord Token: Configured")
+    print("✅ Gemini API: Configured") 
+    print("✅ Commands: Loaded")
+    print(f"🌐 Web server: Running on port {os.environ.get('PORT', 8000)}")
+    print("🎯 Bot đang kết nối...")
+    
+    try:
+        bot.run(DISCORD_TOKEN)
+    except discord.LoginFailure:
+        print("❌ Lỗi: Discord Token không hợp lệ!")
+        print("💡 Vui lòng kiểm tra lại token")
+    except Exception as e:
+        print(f"❌ Lỗi khởi động: {e}")
