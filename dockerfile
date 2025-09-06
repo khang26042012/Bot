@@ -11,10 +11,13 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy source code
-COPY . .
+COPY discord_gemini_bot.py .
 
-# Expose port (không bắt buộc cho Discord bot)
+# Set environment variables
+ENV PORT=8000
+
+# Expose port
 EXPOSE 8000
 
 # Command để chạy bot
-CMD ["python", "discord_bot.py"]
+CMD ["python", "discord_gemini_bot.py"]
